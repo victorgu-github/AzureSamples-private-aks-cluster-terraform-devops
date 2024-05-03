@@ -266,10 +266,10 @@ module "virtual_machine" {
   log_analytics_workspace_id          = module.log_analytics_workspace.workspace_id
   log_analytics_workspace_key         = module.log_analytics_workspace.primary_shared_key
   log_analytics_workspace_resource_id = module.log_analytics_workspace.id
-  script_storage_account_name         = var.script_storage_account_name
-  script_storage_account_key          = var.script_storage_account_key
-  container_name                      = var.container_name
-  script_name                         = var.script_name
+  # script_storage_account_name         = var.script_storage_account_name
+  # script_storage_account_key          = var.script_storage_account_key
+  # container_name                      = var.container_name
+  # script_name                         = var.script_name
 }
 
 module "node_pool" {

@@ -23,7 +23,7 @@ variable "solution_plan_map" {
 
 variable "location" {
   description = "Specifies the location for the resource group and all the resources"
-  default     = "northeurope"
+  default     = "southcentralus"
   type        = string
 }
 
@@ -613,27 +613,27 @@ variable "ssh_public_key" {
   type        = string
 }
 
-variable "script_storage_account_name" {
-  description = "(Required) Specifies the name of the storage account that contains the custom script."
-  type        = string
-}
+# variable "script_storage_account_name" {
+#   description = "(Required) Specifies the name of the storage account that contains the custom script."
+#   type        = string
+# }
 
-variable "script_storage_account_key" {
-  description = "(Required) Specifies the name of the storage account that contains the custom script."
-  type        = string
-}
+# variable "script_storage_account_key" {
+#   description = "(Required) Specifies the name of the storage account that contains the custom script."
+#   type        = string
+# }
 
-variable "container_name" {
-  description = "(Required) Specifies the name of the container that contains the custom script."
-  type        = string
-  default     = "scripts"
-}
+# variable "container_name" {
+#   description = "(Required) Specifies the name of the container that contains the custom script."
+#   type        = string
+#   default     = "scripts"
+# }
 
-variable "script_name" {
-  description = "(Required) Specifies the name of the custom script."
-  type        = string
-  default     = "configure-jumpbox-vm.sh"
-}
+# variable "script_name" {
+#   description = "(Required) Specifies the name of the custom script."
+#   type        = string
+#   default     = "configure-jumpbox-vm.sh"
+# }
 
 variable "keda_enabled" {
   description = "(Optional) Specifies whether KEDA Autoscaler can be used for workloads."
