@@ -129,7 +129,7 @@ variable "sku_tier" {
 
 variable "kubernetes_version" {
   description = "Specifies the AKS Kubernetes version"
-  default     = "1.21.1"
+  default     = "1.29"
   type        = string
 }
 
@@ -477,7 +477,7 @@ variable "storage_account_tier" {
 variable "acr_name" {
   description = "Specifies the name of the container registry"
   type        = string
-  default     = "BaboAcr"
+  default     = "VictorAcr-demo123456"
 }
 
 variable "acr_sku" {
@@ -530,7 +530,7 @@ variable "storage_account_replication_type" {
 variable "key_vault_name" {
   description = "Specifies the name of the key vault."
   type        = string
-  default     = "BaboAksKeyVault"
+  default     = "VictorAksKeyVault123456"
 }
 
 variable "key_vault_sku_name" {

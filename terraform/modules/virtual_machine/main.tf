@@ -177,33 +177,33 @@ resource "azurerm_virtual_machine_extension" "monitor_agent" {
   # depends_on = [azurerm_virtual_machine_extension.custom_script]
 }
 
-resource "azurerm_virtual_machine_extension" "dependency_agent" {
-  name                       = "${var.name}DependencyAgent"
-  virtual_machine_id         = azurerm_linux_virtual_machine.virtual_machine.id
-  publisher                  = "Microsoft.Azure.Monitoring.DependencyAgent"
-  type                       = "DependencyAgentLinux"
-  type_handler_version       = "9.10"
-  auto_upgrade_minor_version = true
+# resource "azurerm_virtual_machine_extension" "dependency_agent" {
+#   name                       = "${var.name}DependencyAgent"
+#   virtual_machine_id         = azurerm_linux_virtual_machine.virtual_machine.id
+#   publisher                  = "Microsoft.Azure.Monitoring.DependencyAgent"
+#   type                       = "DependencyAgentLinux"
+#   type_handler_version       = "9.10"
+#   auto_upgrade_minor_version = true
  
-  settings = <<SETTINGS
-    {
-      "workspaceId": "${var.log_analytics_workspace_id}"
-    }
-  SETTINGS
+#   settings = <<SETTINGS
+#     {
+#       "workspaceId": "${var.log_analytics_workspace_id}"
+#     }
+#   SETTINGS
  
-  protected_settings = <<PROTECTED_SETTINGS
-    {
-      "workspaceKey": "${var.log_analytics_workspace_key}"
-    }
-  PROTECTED_SETTINGS
+#   protected_settings = <<PROTECTED_SETTINGS
+#     {
+#       "workspaceKey": "${var.log_analytics_workspace_key}"
+#     }
+#   PROTECTED_SETTINGS
 
-  lifecycle {
-    ignore_changes = [
-      tags
-    ]
-  }
-  depends_on = [azurerm_virtual_machine_extension.monitor_agent]
-}
+#   lifecycle {
+#     ignore_changes = [
+#       tags
+#     ]
+#   }
+#   depends_on = [azurerm_virtual_machine_extension.monitor_agent]
+# }
 
 resource "azurerm_monitor_diagnostic_setting" "nsg_settings" {
   name                       = "DiagnosticsSettings"
